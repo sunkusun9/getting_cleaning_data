@@ -6,6 +6,11 @@ Explaination run_analysis.R
 ## 0. Preparation
 * Download data set and extract them into project folder.
 * set working directory: project folder
+* install package: dplyr, tidyr
+```R
+install.packages("dplyr")
+install.packages("tidyr")
+```
 ```R
 source('run_analysis.R')
 ```
