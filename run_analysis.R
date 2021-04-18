@@ -33,6 +33,7 @@ rm(df_test)
 names(df_all)[1:561] <- df_feature[, 2]
 featureName <- df_feature[, 2]
 
+df_tidy
 # Select only the columns contain "mean()" or "std()"
 target_feature <- featureName[grep("mean\\(\\)|std\\(\\)", featureName)]
 df_all <- select(df_all, all_of(target_feature), activity)
@@ -51,3 +52,5 @@ df_tidy <- gather(df_all, "subject-type-axis", value, -activity) %>%
 
 # Timble to data frame and spread feature_name
 df_tidy <- as.data.frame(df_tidy) %>% spread(feature_name, avg)
+
+print(df_tidy)
